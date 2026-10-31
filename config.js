@@ -6,6 +6,6 @@
 window.HAMZULICIOUS_CONFIG = {
   whatsappNumber: "916299459231",
   contactEmail: "ayankhan4662@gmail.com",
-  supabaseUrl: "ivbezrmzorraunajlheg",
+  supabaseUrl: "https://ivbezrmzorraunajlheg.supabase.co",
   supabaseAnonKey: "sb_publishable_r8nTD888Mdop2235z5RkdA_6qqz1Ual"
 };
