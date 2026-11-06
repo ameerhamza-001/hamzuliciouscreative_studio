@@ -109,3 +109,48 @@ body { background: var(--paper); color: var(--ink); }
   .project-card img, .project-card video { height: 260px; }
   .filter { padding: 8px 11px; font-size: 9px; }
 }
+
+
+/* ===== Full artwork visibility: never crop uploaded photos or videos ===== */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.project-card img,
+.project-card video {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: 560px;
+  aspect-ratio: 4 / 3;
+  object-fit: contain !important;
+  object-position: center center;
+  background: #e9dfd7;
+}
+.project-card video {
+  background: #211a1b;
+}
+.project-card img {
+  cursor: zoom-in;
+}
+.project-info {
+  flex: 1 0 auto;
+}
+@media (max-width: 800px) {
+  .project-card img,
+  .project-card video {
+    max-height: 480px;
+    aspect-ratio: 4 / 3;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card img,
+  .project-card video {
+    max-height: 520px;
+    aspect-ratio: 4 / 3;
+  }
+}
