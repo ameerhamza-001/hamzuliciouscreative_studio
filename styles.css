@@ -6,3 +6,106 @@
 .contact-details{display:grid;gap:8px;margin-top:22px;font-size:11px;color:#80674f}
 .contact-details a{width:fit-content;border-bottom:1px solid #c8b59e;padding-bottom:3px}
 .contact-details a:hover{color:#30271f}
+
+
+/* ===== Hamzulicious premium studio refresh ===== */
+:root {
+  --cream: #f5eee7;
+  --paper: #fbf8f3;
+  --sand: #e9ddd2;
+  --taupe: #bda58e;
+  --brown: #4a1d2b;
+  --ink: #211a1b;
+  --muted: #766a68;
+  --line: #e2d6ce;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --burgundy: #4a1d2b;
+  --gold: #b59668;
+}
+body { background: var(--paper); color: var(--ink); }
+.announcement { background: var(--burgundy); color: #f8eee5; letter-spacing: 2.2px; }
+.announcement span { color: #d8bd91; }
+.site-header { background: rgba(251,248,243,.96); border-bottom-color: #e9ded6; backdrop-filter: blur(14px); }
+.wordmark-main { letter-spacing: 2.7px; color: var(--burgundy); }
+.wordmark-sub { color: #8b7773; }
+.site-header nav a { color: #55464a; transition: color .2s ease; }
+.site-header nav a:hover, .text-link:hover { color: var(--gold); }
+.site-header nav .nav-cta { background: var(--burgundy); border-color: var(--burgundy); color: #fff8f1; padding: 12px 20px; }
+.site-header nav .nav-cta:hover { background: #2e111b; color: white; }
+.hero { min-height: 650px; padding-top: 75px; padding-bottom: 90px; }
+.eyebrow, .section-kicker { color: #98784f; letter-spacing: 2.6px; }
+.hero h1 { font-size: clamp(54px, 6.4vw, 84px); letter-spacing: -2.8px; }
+.hero h1 em, h2 em { color: #9b6c79; }
+.hero-intro { max-width: 455px; font-size: 15px; color: #75686a; }
+.button-dark { background: var(--burgundy); color: #fff9f3; }
+.button-dark:hover { background: #2f111b; }
+.button-light { background: #f0e2d5; color: var(--burgundy); }
+.text-link { border-bottom-color: #b99c78; }
+.hero-signature { color: #987c60; }
+.hero-art { min-height: 465px; }
+.art-card { box-shadow: 0 26px 70px rgba(53,22,32,.14); }
+.art-card-back { background: #4a1d2b; color: #ead7c4; }
+.art-card-front { background: #f0e4d8; border-color: #d7c1ae; }
+.art-card-front:before, .art-card-front:after, .art-orbit { border-color: #b59668; }
+.art-script { color: #5a2938; }
+.art-card-bottom { color: #8a694d; }
+.floating-note { color: #6c4a50; border: 1px solid #eadfd6; box-shadow: 0 12px 35px rgba(53,22,32,.09); }
+.ticker { background: #eee3d9; color: #68434d; }
+.ticker span { color: var(--gold); }
+.intro-section { padding-top: 130px; padding-bottom: 135px; }
+.large-copy { color: #56313c; }
+.services-section { background: #f1e9e2; }
+.service-grid { background: #ded0c6; border-color: #ded0c6; }
+.service-card { background: #faf6f1; transition: transform .25s ease, background .25s ease; }
+.service-card:hover { transform: translateY(-4px); background: #fffdf9; }
+.service-icon { color: #a67b68; }
+.service-number { color: #aa8b68; }
+.service-card h3 { color: #38232a; }
+.service-price { border-color: #e8ddd4; color: #8b7773; }
+.service-price b { color: var(--burgundy); }
+.filter-row { gap: 8px; }
+.filter { border-color: #dfd2c8; color: #6b585c; border-radius: 2px; padding: 10px 14px; transition: .2s ease; }
+.filter.active, .filter:hover { background: var(--burgundy); border-color: var(--burgundy); color: white; }
+.portfolio-grid { gap: 22px; }
+.project-card { background: #f2eae3; transition: transform .25s ease, box-shadow .25s ease; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(53,22,32,.1); }
+.project-card img, .project-card video { height: 300px; background: #e6d8ce; }
+.project-info { padding: 18px 19px 20px; }
+.project-info small { color: #98734e; letter-spacing: 1.7px; }
+.project-info h3 { color: #3b2029; }
+.portfolio-placeholder { background: #faf6f1; border-color: #cdb8a9; }
+.portfolio-placeholder > span { color: #9b6c79; }
+.wedding-section { background: #421927; }
+.invite-back { background: #b89a7d; }
+.invite-front { background: #f5ece2; border-color: #c6a77f; outline-color: #c6a77f; }
+.invite-flower { color: #9a6d75; }
+.invite-script { color: #562d3a; }
+.wedding-copy .section-kicker { color: #d9bd91; }
+.wedding-copy h2 em { color: #d6b58f; }
+.process-grid > div { border-top-color: #cdb8a9; }
+.process-grid span { color: #9b7954; }
+.process-grid h3 { color: #3e2730; }
+.contact-section { background: #eee4db; }
+.contact-form { background: #fbf8f3; box-shadow: 0 18px 55px rgba(53,22,32,.055); }
+.contact-form label { color: #563541; }
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: #9c6d79; }
+.contact-details { color: #69434d; }
+.site-footer { background: #21181c; }
+.footer-wordmark .wordmark-main { color: #f6ece4; }
+.footer-wordmark .wordmark-sub { color: #c9b5a8; }
+.footer-bottom a { color: #d9bd91; }
+:focus-visible { outline: 2px solid #b59668; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 800px) {
+  .site-header nav { background: #fbf8f3; box-shadow: 0 16px 25px rgba(53,22,32,.08); }
+  .site-header nav .nav-cta { text-align: center; }
+}
+@media (max-width: 520px) {
+  .hero { padding-top: 48px; }
+  .hero h1 { font-size: 53px; }
+  .project-card img, .project-card video { height: 260px; }
+  .filter { padding: 8px 11px; font-size: 9px; }
+}

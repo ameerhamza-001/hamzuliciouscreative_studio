@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4efe7">
-  <meta name="description" content="Hamzulicious Creative Studio — graphic design, branding, visual art and luxury wedding invitations. Your Vision, My Creative Signature.">
+  <meta name="theme-color" content="#35121f">
+  <meta name="description" content="Hamzulicious Creative Studio creates distinctive brand identities, packaging, marketing visuals, social media designs and bespoke wedding invitations.">
   <title>Hamzulicious Creative Studio | Your Vision, My Creative Signature</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,14 @@
   <script defer src="app.js"></script>
 </head>
 <body>
-  <div class="announcement">CREATIVITY, WITH EXTRA FLAVOUR <span>✦</span> GRAPHIC DESIGN · BRANDING · VISUAL ART</div>
+  <div class="announcement">CREATIVITY, WITH EXTRA FLAVOUR <span>✦</span> BRAND IDENTITY · DIGITAL DESIGN · VISUAL STORYTELLING</div>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Hamzulicious Creative Studio home">
       <span class="wordmark-main">HAMZULICIOUS</span><span class="wordmark-sub">CREATIVE STUDIO</span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">☰</button>
     <nav id="mainNav">
-      <a href="#home">Home</a><a href="#about">Our Story</a><a href="#services">Services</a>
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a><a href="#weddings">Wedding Edit</a><a href="#contact" class="nav-cta">Let's Create</a>
     </nav>
   </header>
@@ -31,8 +31,8 @@
     <section class="hero section-wrap" id="home">
       <div class="hero-copy">
         <p class="eyebrow">A CREATIVE HOUSE FOR BRANDS & BEAUTIFUL MOMENTS</p>
-        <h1>Design that feels<br><em>like you.</em></h1>
-        <p class="hero-intro">Thoughtful visuals. Memorable identities. Beautifully crafted details. We turn your ideas into designs that leave a lasting impression.</p>
+        <h1>We make ideas<br><em>look unforgettable.</em></h1>
+        <p class="hero-intro">Creative direction, distinctive identities and beautifully considered visuals. We turn ambitious ideas into work people remember.</p>
         <div class="hero-actions"><a class="button button-dark" href="#portfolio">Explore our work <span>↗</span></a><a class="text-link" href="#contact">Start a project <span>→</span></a></div>
         <div class="hero-signature">Your Vision, My Creative Signature</div>
       </div>
@@ -69,7 +69,19 @@
 
     <section class="portfolio-section section-wrap" id="portfolio">
       <div class="section-heading"><div><div class="section-kicker">03 / SELECTED CREATIONS</div><h2>A visual world<br><em>of its own.</em></h2></div><p>A growing collection of ideas brought to life. Choose a category to explore.</p></div>
-      <div class="filter-row" id="portfolioFilters"><button class="filter active" data-filter="All">All work</button><button class="filter" data-filter="Branding">Branding</button><button class="filter" data-filter="Packaging">Packaging</button><button class="filter" data-filter="Marketing">Marketing</button><button class="filter" data-filter="Video">Video</button><button class="filter" data-filter="Other">Other</button></div>
+      <div class="filter-row" id="portfolioFilters" aria-label="Filter portfolio projects">
+        <button class="filter active" type="button" data-filter="All" aria-pressed="true">All work</button>
+        <button class="filter" type="button" data-filter="Brand Identity" aria-pressed="false">Brand Identity</button>
+        <button class="filter" type="button" data-filter="Packaging Design" aria-pressed="false">Packaging</button>
+        <button class="filter" type="button" data-filter="Marketing & Advertising" aria-pressed="false">Marketing</button>
+        <button class="filter" type="button" data-filter="Social Media Design" aria-pressed="false">Social Media</button>
+        <button class="filter" type="button" data-filter="Poster & Print Design" aria-pressed="false">Poster & Print</button>
+        <button class="filter" type="button" data-filter="Wedding & Invitation Design" aria-pressed="false">Wedding</button>
+        <button class="filter" type="button" data-filter="Restaurant & Menu Design" aria-pressed="false">Restaurant</button>
+        <button class="filter" type="button" data-filter="Presentation & Editorial Design" aria-pressed="false">Editorial</button>
+        <button class="filter" type="button" data-filter="Video & Motion Graphics" aria-pressed="false">Video & Motion</button>
+        <button class="filter" type="button" data-filter="Website & UI Design" aria-pressed="false">Website & UI</button>
+      </div>
       <div class="portfolio-grid" id="portfolioGrid">
         <div class="portfolio-placeholder"><span>✳</span><h3>Your creative work belongs here.</h3><p>Once you connect your project gallery, your uploaded designs will appear in this space.</p><a href="admin.html" class="text-link">Open studio dashboard →</a></div>
       </div>
@@ -84,7 +96,7 @@
       </div>
     </section>
 
-    <section class="process-section section-wrap">
+    <section class="process-section section-wrap" id="process">
       <div class="section-kicker">05 / THE CREATIVE PROCESS</div><h2>From your thought<br>to <em>the final detail.</em></h2>
       <div class="process-grid"><div><span>01</span><h3>Tell us</h3><p>Share your idea, occasion, brief and inspiration.</p></div><div><span>02</span><h3>We imagine</h3><p>We shape a creative direction around your vision.</p></div><div><span>03</span><h3>We create</h3><p>Your design is crafted, refined and brought to life.</p></div><div><span>04</span><h3>You shine</h3><p>Receive your final creative files, ready to make an impression.</p></div></div>
     </section>
@@ -105,6 +117,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-top"><a class="wordmark footer-wordmark" href="#home"><span class="wordmark-main">HAMZULICIOUS</span><span class="wordmark-sub">CREATIVE STUDIO</span></a><p>Your Vision, My Creative Signature</p><a class="back-top" href="#home">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> Hamzulicious Creative Studio</span><span>GRAPHIC DESIGN · BRANDING · VISUAL ART</span><a href="admin.html">Studio admin ↗</a></div></footer>
+  <footer class="site-footer"><div class="footer-top"><a class="wordmark footer-wordmark" href="#home"><span class="wordmark-main">HAMZULICIOUS</span><span class="wordmark-sub">CREATIVE STUDIO</span></a><p>Your Vision, My Creative Signature</p><a class="back-top" href="#home">BACK TO TOP ↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> Hamzulicious Creative Studio</span><span>BRAND IDENTITY · DIGITAL DESIGN · VISUAL STORYTELLING</span><a href="admin.html">Studio admin ↗</a></div></footer>
 </body>
 </html>
