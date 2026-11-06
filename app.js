@@ -47,7 +47,18 @@
       grid.innerHTML = `<div class="portfolio-placeholder"><span>✳</span><h3>Your creative work belongs here.</h3><p>Upload your first project through the studio dashboard and it will appear here.</p><a href="admin.html" class="text-link">Open studio dashboard →</a></div>`;
       return;
     }
-    const shown = projects.filter(p => currentFilter === "All" || p.category === currentFilter);
+    let shown = projects.filter(p => currentFilter === "All" || p.category === currentFilter);
+    // A project may have more than one category listing that reuses the same uploaded media.
+    // Show the asset once in All, but keep it visible in every category it belongs to.
+    if (currentFilter === "All") {
+      const seenMedia = new Set();
+      shown = shown.filter(p => {
+        const key = p.storage_path || p.media_url || p.id;
+        if (seenMedia.has(key)) return false;
+        seenMedia.add(key);
+        return true;
+      });
+    }
     grid.innerHTML = shown.length ? shown.map(p => {
       const media = p.media_type === "video"
         ? `<video src="${escapeHTML(p.media_url)}" controls preload="metadata" playsinline aria-label="${escapeHTML(p.title)}"></video>`
