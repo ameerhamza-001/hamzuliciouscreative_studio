@@ -42,12 +42,57 @@
         <div class="service-price">${s.price ? "Starting at" : "Ask for a quote"} <b>${s.price ? escapeHTML(s.price) : "Custom pricing"}</b></div>
       </article>`).join("");
   }
+  // Convert older Admin Dashboard category labels into the current portfolio categories.
+  // This keeps projects uploaded before the redesign visible in the correct filters.
+  function getProjectCategories(project) {
+    const raw = String(project.category || "").trim().toLowerCase();
+    const title = String(project.title || "").trim().toLowerCase();
+    const description = String(project.description || "").trim().toLowerCase();
+    const text = `${title} ${description}`;
+    const weddingRelated = /\b(wedding|invitation|invite|haldi|mehndi|mehandi|nikah|shaadi|shagun|bride|groom)\b/.test(text);
+
+    const aliases = {
+      "branding": "Brand Identity",
+      "brand": "Brand Identity",
+      "brand identity": "Brand Identity",
+      "packaging": "Packaging Design",
+      "marketing": "Marketing & Advertising",
+      "advertising": "Marketing & Advertising",
+      "social media": "Social Media Design",
+      "poster": "Poster & Print Design",
+      "print": "Poster & Print Design",
+      "wedding": "Wedding & Invitation Design",
+      "invitation": "Wedding & Invitation Design",
+      "restaurant": "Restaurant & Menu Design",
+      "menu": "Restaurant & Menu Design",
+      "editorial": "Presentation & Editorial Design",
+      "presentation": "Presentation & Editorial Design",
+      "video": "Video & Motion Graphics",
+      "motion graphics": "Video & Motion Graphics",
+      "website": "Website & UI Design",
+      "ui": "Website & UI Design"
+    };
+
+    let category = aliases[raw] || categories.find(c => c.toLowerCase() === raw) || "";
+    if (raw === "other" || !category) {
+      if (/\b(visiting card|business card|logo|identity|branding)\b/.test(text)) category = "Brand Identity";
+      else if (weddingRelated) category = "Wedding & Invitation Design";
+    }
+
+    const result = category ? [category] : [];
+    // Wedding invitation/ceremony videos should appear in BOTH requested categories.
+    if (raw === "video" && weddingRelated && !result.includes("Wedding & Invitation Design")) {
+      result.push("Wedding & Invitation Design");
+    }
+    return result;
+  }
+
   function renderProjects() {
     if (!projects.length) {
       grid.innerHTML = `<div class="portfolio-placeholder"><span>✳</span><h3>Your creative work belongs here.</h3><p>Upload your first project through the studio dashboard and it will appear here.</p><a href="admin.html" class="text-link">Open studio dashboard →</a></div>`;
       return;
     }
-    let shown = projects.filter(p => currentFilter === "All" || p.category === currentFilter);
+    let shown = projects.filter(p => currentFilter === "All" || getProjectCategories(p).includes(currentFilter));
     // A project may have more than one category listing that reuses the same uploaded media.
     // Show the asset once in All, but keep it visible in every category it belongs to.
     if (currentFilter === "All") {
@@ -63,7 +108,11 @@
       const media = p.media_type === "video"
         ? `<video src="${escapeHTML(p.media_url)}" controls preload="metadata" playsinline aria-label="${escapeHTML(p.title)}"></video>`
         : `<img src="${escapeHTML(p.media_url)}" alt="${escapeHTML(p.title)}" loading="lazy">`;
-      return `<article class="project-card">${media}<div class="project-info"><small>${escapeHTML(p.category)}</small><h3>${escapeHTML(p.title)}</h3><p>${escapeHTML(p.description || "")}</p></div></article>`;
+      const displayCategories = getProjectCategories(p);
+      const categoryLabel = currentFilter === "All"
+        ? (displayCategories.join(" · ") || String(p.category || "Other"))
+        : currentFilter;
+      return `<article class="project-card">${media}<div class="project-info"><small>${escapeHTML(categoryLabel)}</small><h3>${escapeHTML(p.title)}</h3><p>${escapeHTML(p.description || "")}</p></div></article>`;
     }).join("") : `<div class="portfolio-placeholder"><h3>More creations coming soon.</h3><p>No projects have been added to this category yet.</p></div>`;
   }
   filters.addEventListener("click", e => {
